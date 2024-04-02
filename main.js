@@ -3,11 +3,11 @@ const FULL_HEART = '♥'
 
 const articleHearts = document.getElementsByClassName('like-glyph');
 
-function likeCallback(e) {
-  const heart = e.target;
+function likeCallback(event) {
+  const heart = event.target;
   mimicServerCall('sampleURL')
   .then( () => {
-    if(heart === EMPTY_HEART){
+    if(heart.textContent === EMPTY_HEART){
       heart.textContent = FULL_HEART;
       heart.className = 'activated-heart';
     } else {
